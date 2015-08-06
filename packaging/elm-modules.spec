@@ -3,7 +3,7 @@ Summary:    The EFL Modules
 Version:    0.1.1
 Release:    1
 Group:      System/Libraries
-License:    LGPLv2.1+
+License:    Flora-1.1
 URL:        http://www.tizen.org
 Source0:    %{name}-%{version}.tar.gz
 BuildRequires: elementary-devel, eina-devel
