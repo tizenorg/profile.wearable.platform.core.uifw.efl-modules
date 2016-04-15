@@ -13,10 +13,10 @@ AM_CPPFLAGS = \
 -DELEMENTARY_BUILD \
 @ELEMENTARY_CFLAGS@
 
-pkgdir = $(pkglibdir)/modules/datetime_input_spinner/$(MODULE_ARCH)
+pkgdir = $(pkglibdir)/modules/datetime_input_circle/$(MODULE_ARCH)
 pkg_LTLIBRARIES = module.la
 
-module_la_SOURCES = datetime_input_spinner.c
+module_la_SOURCES = datetime_input_circle.c
 
 module_la_LIBADD = @ELEMENTARY_LIBS@
 module_la_LDFLAGS = -no-undefined -module -avoid-version
