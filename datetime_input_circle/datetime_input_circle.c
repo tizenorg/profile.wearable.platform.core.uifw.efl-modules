@@ -91,7 +91,7 @@ _ampm_clicked_cb(void *data, Evas_Object *obj, void *event_info EINA_UNUSED)
    for (idx = 0; idx < DATETIME_FIELD_COUNT; idx++)
      {
 
-        if (evas_object_data_get(circle_mod->field_obj[idx], "_field_type") ==ELM_DATETIME_AMPM)
+        if ((int)evas_object_data_get(circle_mod->field_obj[idx], "_field_type") == ELM_DATETIME_AMPM)
           ampm_field = circle_mod->field_obj[idx];
      }
 
