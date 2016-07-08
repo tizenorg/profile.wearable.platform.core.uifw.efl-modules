@@ -317,7 +317,8 @@ field_value_display(Elm_Datetime_Module_Data *module_data, Evas_Object *obj)
    fmt = circle_mod->mod_data.field_format_get(circle_mod->mod_data.base, field_type);
 
    locale_tmp = setlocale(LC_MESSAGES, NULL);
-   strcpy(locale, locale_tmp);
+   strncpy(locale, locale_tmp, BUFF_SIZE - 1);
+   locale[BUFF_SIZE - 1] = 0;
 
    if (locale[0] != '\0')
      {
@@ -422,7 +423,7 @@ field_value_display(Elm_Datetime_Module_Data *module_data, Evas_Object *obj)
    calendar = ucal_open(NULL, 0, locale, UCAL_GREGORIAN, &status);
    ucal_clear(calendar);
    pos = 0;
-   udat_parseCalendar(dt_formatter, calendar, Ufield, (sizeof(Ufield) / sizeof(UChar)), &pos, &status);
+   udat_parseCalendar(dt_formatter, calendar, Ufield, ((sizeof(Ufield) / sizeof(UChar)) + 1), &pos, &status);
    date = ucal_getMillis(calendar, &status);
    udat_format(dt_formatter, date, str, sizeof(str), NULL, &status);
    u_austrcpy(buf, str);
