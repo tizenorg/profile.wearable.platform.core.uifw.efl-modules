@@ -422,7 +422,7 @@ field_value_display(Elm_Datetime_Module_Data *module_data, Evas_Object *obj)
    calendar = ucal_open(NULL, 0, locale, UCAL_GREGORIAN, &status);
    ucal_clear(calendar);
    pos = 0;
-   udat_parseCalendar(dt_formatter, calendar, Ufield, strlen(Ufield), &pos, &status);
+   udat_parseCalendar(dt_formatter, calendar, Ufield, u_strlen(Ufield), &pos, &status);
    date = ucal_getMillis(calendar, &status);
    udat_format(dt_formatter, date, str, sizeof(str), NULL, &status);
    u_austrcpy(buf, str);
